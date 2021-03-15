@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  db_post:
+    image: postgres:9.4
+    container_name: db_post
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postegres"
+    volumes:
+      - "test:/var/lib/postgresql/data"
+    ports:
+      - "5444:5432"
+    networks:
+      - back_tier
+         
+volumes:
+  test:    
+     
+networks:
+  back_tier:

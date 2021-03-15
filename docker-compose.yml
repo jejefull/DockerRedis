@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  db:
+    container_name: redis
+    image: redis:alpine
+    restart: always
+    ports:
+      - "6379:6379"
+  python:
+    build: .
+    command: python3 app.py
+
+
